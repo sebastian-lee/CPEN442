@@ -9,7 +9,8 @@ public class A2 {
     // method main()
     public static void main (String[] args) {
     	//question1();
-    	question2();
+    	//question2V1();
+    	question2V2();
     }
     
     public static void question1(){
@@ -140,7 +141,9 @@ public class A2 {
 	static String[][] bestArray = new String[5][5];
     static double temp = 20;
     static double step = 0.2;
-    public static void question2(){
+    
+    //Algorithm method
+    public static void question2V1(){
     	//Question 2 cipher
     	String cipher2 = "HLVFDIAYLCWQGERBOZVLLUWNRBPIALCTOEEZDFWADIAYPAGCEXSBOFBILAAFDMGSACHTYSHGRTWCVYDISRTAATMEVHSLAFDMGSTKLUBVTPSTEYSKAQZLRLLUWNEIGRQVTZSTFDMYIRBGOFRBXTTROLEXSBRSHPQIOFOISWAPALAFDMGSACHTYSHGRTWCOFBITPWLOADUDFYACSEIBCLSMYLORBVTSBFGSBFDDIAYLACODPFDGFBLOFOLZPGRYAVFEIDIAKLRGFTQFLCGBSLDPAHKRBXTFDQLCGDLSKLWTABSGDIOLOBLGXLUWNULADWSRDNEDGGSECWQTPGFAFDMGSACHTPAFQDGGSEYBFYARSHPQIAFVIOSMCBYHOFDADOFLAULACIRBGDFBSLDPAIRAPAQXPLAQVDILOTFBPKYAEDGGSACHTYSHGRTWCAFDMGSGFVBPIVQWNDICBPRVRSLGRWAACLHBCPSVHVQWNPADULUWNCWOILRSAAFDMGSEYECXLLYBVRPMCOSYPVYPCHOHXBGLDPAWNDIYKRSWLDFGSWYDISKCWSQCGDVCWDLFGDISWOFDBPAGSSUILRSLUWLYASOAFDMGSMYLORSHPQITHODAPHTTSLATHRPKBCAFGABBDYSBCGYLCSUEIBFTAGPDPFBGEHEFBBSLDPAIHWNSRAPAQXPOFBVRSFLDGGSLDEOTYWNULVYDIEOCAUIHLZBCGOREXSBRSHPQIOFDFYMLSSEDGGSIVEZKBLWAWFDLXSQCSRPWALXZPUARBBTCAUIHLZBCGMAAFDMGSDICWAFDMGSACHTPAMFFDYVCAGBMFAYQVNVRSBVYBAYAWTRWNDFOFVYDIDISWOFLUDOBACMDILGLBFTLCOELHIUEXOCWNAFDMGSACHTYSHGRTWCGRLUCWLIHBFDULRSLDFTLADGLBRHWNADBSLDIPLFUTLBRSDUDISYAPAQXPECVFYAGRHQULALCTOFDTCAUIHLUWCWDGFGEIRSADWCCGLUOFBLAFDMGSCGTHDLQVAQSBYTEIPRYAXRBAVQUDLCHAAFDMGSACHTRSHPQIAFDMGSGFSMTHWNOFBLPSLFEIAFDMGSACHTYSHGRTWCOFDFPIGPFTSLVHLDRSDUDIAYLCYAWLQIBCMEKTLDCGELACHSLAOIZLLUWLCAOELHIUEXWLGFNSDGGSCGODYSIQLCSUSTCGWAPAXLDFECHPQIRPTPMFVYDIRBXTFDDILOACGPFTSLGVAYAWTRWNDFRSWLDFADITLEDGGSDITPMRAFDMGSEYECXLAYRUURWNAFDMGSHDCARHWNAFDMGSAPAQXLRHWNSRAPAQXPGBVFOFDILBQHEZOFBITPWLOADUDFZXLUDTYKFGSDROQLCSYAGRHQOFDTVLLWCWQTBYGYLEUBYSDIQVVRLIUTLAQVAFDMGSACHTPAFQDGGSMYQECGDUDIYEULFBADVIQVULUVLDOACGTSUTLYMCDGLBRHWNLSALEYECXLLCRDQAIPUHLDYSAFGXSLBLAGGALHBLFBSRXVCGEYQVMOFDALLYWNDILORSHPQICGOHFGATBPSBDIAPTPMREIAFFCXLSBAFDMGSYSHGRTWCIXHPQHSBFGOFLIDPBPAFDMGSQTRUQLWYTXGREMAPOHRVIDGFNEDGGSPAFQDGGSCGOHCGRBVLRQTPMRVYDIULAFDMGSYVTPSTVFOSGSWARBPIADVILOCSSTFDMYQLYMTPSTEYRPLCSEDGBFIODFWSAFDMGSHVLXYAAFDMGSACHTPAMFFDRSHPQISCPVYSSMOFLUDLRDVIOTLEDGGSCELVCSEITKDVRKTRVFHLDILOMYLOLWAYRSZPKAMCDFRBPITFBHAFDMGSRBPIADVIVYSUSAPITUWLAFDMGSZVDFZLYSFSDGGSACHTYSHGRTWCOFDTVLULLDYSFDYSYGERPAZVBMULRSRDQAIPMSFDDICBPRNGCWDFDCTPIUMCHTLYDOAKCWSHFGULAEFGOLQVAYAFDMGSULALFQRSVFSBTFBHAFDMGSBFHAPITUGLSTFDULECVFSKHLBVULRDVLULOFDUDILOTHRPHEAPDFBOYLBMYSVQLDEOEYTHFLDGGSACHTRSHPQIAFDMGSYAWSWDAYQVVRWZGAPIQVVAYUYEATFOOQDGDIAKZVLFPISBGRWAAEDGGSCGODYSAEYASGADBDYSURLEABTNTABSGDIOHMADVICAULGLVQHXSBOFOLMFFGELDISBRLQIGEAXPAKAIAHBLAOIBRSBAFDMGSDIYEULFBADVIOIRGKATHVQFLTPSTGFATWNAYSKHLDOFDVRMZWQOIYLODAOLBQHOFBDYSTHRPKECBAPYKTPTHFSDGGSTCXLRHWNULEGERAFDMGSTKDFTWRTXLEIULECWSOEEZOAFOCAWCMBFDRSWNFGAFDMGSACHTPAFQDGGSOQBGVQWNOFDUDIYEULFBADVIQVDILOTHRPKBCAGAHMALHMLHWNVRMZWQAFDMGSGECMLUDIBGOFLADILOGBYPAFDMGSDICWMYUILBYSGSVRECSEFGOLQVAYHLLDUIIUVFCEFLDGGSDIYEULFBADVIQVLHBSULECFCIULUGCMFTPDFDCDGABWCQTDIYKWADUDFFAATALDFDIABTYLEDU";
     	
@@ -250,6 +253,220 @@ public class A2 {
     	
     	
     }
+   
+    //Analytical approach
+    public static void question2V2(){
+    	//Question 2 cipher
+    	String cipher2 = "HLVFDIAYLCWQGERBOZVLLUWNRBPIALCTOEEZDFWADIAYPAGCEXSBOFBILAAFDMGSACHTYSHGRTWCVYDISRTAATMEVHSLAFDMGSTKLUBVTPSTEYSKAQZLRLLUWNEIGRQVTZSTFDMYIRBGOFRBXTTROLEXSBRSHPQIOFOISWAPALAFDMGSACHTYSHGRTWCOFBITPWLOADUDFYACSEIBCLSMYLORBVTSBFGSBFDDIAYLACODPFDGFBLOFOLZPGRYAVFEIDIAKLRGFTQFLCGBSLDPAHKRBXTFDQLCGDLSKLWTABSGDIOLOBLGXLUWNULADWSRDNEDGGSECWQTPGFAFDMGSACHTPAFQDGGSEYBFYARSHPQIAFVIOSMCBYHOFDADOFLAULACIRBGDFBSLDPAIRAPAQXPLAQVDILOTFBPKYAEDGGSACHTYSHGRTWCAFDMGSGFVBPIVQWNDICBPRVRSLGRWAACLHBCPSVHVQWNPADULUWNCWOILRSAAFDMGSEYECXLLYBVRPMCOSYPVYPCHOHXBGLDPAWNDIYKRSWLDFGSWYDISKCWSQCGDVCWDLFGDISWOFDBPAGSSUILRSLUWLYASOAFDMGSMYLORSHPQITHODAPHTTSLATHRPKBCAFGABBDYSBCGYLCSUEIBFTAGPDPFBGEHEFBBSLDPAIHWNSRAPAQXPOFBVRSFLDGGSLDEOTYWNULVYDIEOCAUIHLZBCGOREXSBRSHPQIOFDFYMLSSEDGGSIVEZKBLWAWFDLXSQCSRPWALXZPUARBBTCAUIHLZBCGMAAFDMGSDICWAFDMGSACHTPAMFFDYVCAGBMFAYQVNVRSBVYBAYAWTRWNDFOFVYDIDISWOFLUDOBACMDILGLBFTLCOELHIUEXOCWNAFDMGSACHTYSHGRTWCGRLUCWLIHBFDULRSLDFTLADGLBRHWNADBSLDIPLFUTLBRSDUDISYAPAQXPECVFYAGRHQULALCTOFDTCAUIHLUWCWDGFGEIRSADWCCGLUOFBLAFDMGSCGTHDLQVAQSBYTEIPRYAXRBAVQUDLCHAAFDMGSACHTRSHPQIAFDMGSGFSMTHWNOFBLPSLFEIAFDMGSACHTYSHGRTWCOFDFPIGPFTSLVHLDRSDUDIAYLCYAWLQIBCMEKTLDCGELACHSLAOIZLLUWLCAOELHIUEXWLGFNSDGGSCGODYSIQLCSUSTCGWAPAXLDFECHPQIRPTPMFVYDIRBXTFDDILOACGPFTSLGVAYAWTRWNDFRSWLDFADITLEDGGSDITPMRAFDMGSEYECXLAYRUURWNAFDMGSHDCARHWNAFDMGSAPAQXLRHWNSRAPAQXPGBVFOFDILBQHEZOFBITPWLOADUDFZXLUDTYKFGSDROQLCSYAGRHQOFDTVLLWCWQTBYGYLEUBYSDIQVVRLIUTLAQVAFDMGSACHTPAFQDGGSMYQECGDUDIYEULFBADVIQVULUVLDOACGTSUTLYMCDGLBRHWNLSALEYECXLLCRDQAIPUHLDYSAFGXSLBLAGGALHBLFBSRXVCGEYQVMOFDALLYWNDILORSHPQICGOHFGATBPSBDIAPTPMREIAFFCXLSBAFDMGSYSHGRTWCIXHPQHSBFGOFLIDPBPAFDMGSQTRUQLWYTXGREMAPOHRVIDGFNEDGGSPAFQDGGSCGOHCGRBVLRQTPMRVYDIULAFDMGSYVTPSTVFOSGSWARBPIADVILOCSSTFDMYQLYMTPSTEYRPLCSEDGBFIODFWSAFDMGSHVLXYAAFDMGSACHTPAMFFDRSHPQISCPVYSSMOFLUDLRDVIOTLEDGGSCELVCSEITKDVRKTRVFHLDILOMYLOLWAYRSZPKAMCDFRBPITFBHAFDMGSRBPIADVIVYSUSAPITUWLAFDMGSZVDFZLYSFSDGGSACHTYSHGRTWCOFDTVLULLDYSFDYSYGERPAZVBMULRSRDQAIPMSFDDICBPRNGCWDFDCTPIUMCHTLYDOAKCWSHFGULAEFGOLQVAYAFDMGSULALFQRSVFSBTFBHAFDMGSBFHAPITUGLSTFDULECVFSKHLBVULRDVLULOFDUDILOTHRPHEAPDFBOYLBMYSVQLDEOEYTHFLDGGSACHTRSHPQIAFDMGSYAWSWDAYQVVRWZGAPIQVVAYUYEATFOOQDGDIAKZVLFPISBGRWAAEDGGSCGODYSAEYASGADBDYSURLEABTNTABSGDIOHMADVICAULGLVQHXSBOFOLMFFGELDISBRLQIGEAXPAKAIAHBLAOIBRSBAFDMGSDIYEULFBADVIOIRGKATHVQFLTPSTGFATWNAYSKHLDOFDVRMZWQOIYLODAOLBQHOFBDYSTHRPKECBAPYKTPTHFSDGGSTCXLRHWNULEGERAFDMGSTKDFTWRTXLEIULECWSOEEZOAFOCAWCMBFDRSWNFGAFDMGSACHTPAFQDGGSOQBGVQWNOFDUDIYEULFBADVIQVDILOTHRPKBCAGAHMALHMLHWNVRMZWQAFDMGSGECMLUDIBGOFLADILOGBYPAFDMGSDICWMYUILBYSGSVRECSEFGOLQVAYHLLDUIIUVFCEFLDGGSDIYEULFBADVIQVLHBSULECFCIULUGCMFTPDFDCDGABWCQTDIYKWADUDFFAATALDFDIABTYLEDU";
+    	
+    	//Print out cipher text
+    	System.out.print(cipher2 + "\n\n");
+    	
+    	/*
+    	//Frequency Map
+    	TreeMap<Character, Integer> fMap = new TreeMap<Character, Integer>();
+    	for(int i=0;i<cipher2.length();i++){
+    		//System.out.print(cipher1.charAt(i));
+    		if(fMap.get(cipher2.charAt(i))==null){
+    			fMap.put(cipher2.charAt(i),1);
+    		}
+    		else{
+    			int count = (int) fMap.get(cipher2.charAt(i));
+    			count++;
+    			fMap.put(cipher2.charAt(i),count);
+    		}
+    		
+    	}
+    	//Print out Frequency map
+    	for (Map.Entry<Character, Integer> entry : fMap.entrySet()) {
+   	     System.out.println(entry.getKey() );
+    	}
+    	for (Map.Entry<Character, Integer> entry : fMap.entrySet()) {
+  	     System.out.println(entry.getValue());
+    	}
+    	
+       	System.out.print(fMap + "\n\n");
+       	System.out.print(cipher2.length() + "\n\n");
+       	
+       	*/
+    	//Sixgraph map
+    	TreeMap<String, Integer> SixMap = new TreeMap<String, Integer>();
+        
+    	
+    	for(int i=0;i<(cipher2.length()-6);i++){
+    		
+    		if(SixMap.get(cipher2.substring(i,i+6)) == null){
+    			SixMap.put(cipher2.substring(i,i+6),1);
+    		}
+    		else{
+    			int count = SixMap.get(cipher2.substring(i,i+6));
+    			count++;
+    			SixMap.put(cipher2.substring(i,i+6),count);
+    		}
+    		
+    	}
+    	//Pentagraph map
+    	TreeMap<String, Integer> PentaMap = new TreeMap<String, Integer>();
+        
+    	
+    	for(int i=0;i<(cipher2.length()-5);i++){
+    		
+    		if(PentaMap.get(cipher2.substring(i,i+5)) == null){
+    			PentaMap.put(cipher2.substring(i,i+5),1);
+    		}
+    		else{
+    			int count = PentaMap.get(cipher2.substring(i,i+5));
+    			count++;
+    			PentaMap.put(cipher2.substring(i,i+5),count);
+    		}
+    		
+    	}
+    	//Quadgraph map
+    	TreeMap<String, Integer> QuadMap = new TreeMap<String, Integer>();
+        
+    	
+    	for(int i=0;i<(cipher2.length()-4);i++){
+    		
+    		if(QuadMap.get(cipher2.substring(i,i+4)) == null){
+    			QuadMap.put(cipher2.substring(i,i+4),1);
+    		}
+    		else{
+    			int count = QuadMap.get(cipher2.substring(i,i+4));
+    			count++;
+    			QuadMap.put(cipher2.substring(i,i+4),count);
+    		}
+    		
+    	}
+    	//Trigraph map
+    	TreeMap<String, Integer> TriMap = new TreeMap<String, Integer>();
+        
+    	
+    	for(int i=0;i<(cipher2.length()-3);i++){
+    		
+    		if(TriMap.get(cipher2.substring(i,i+3)) == null){
+    			TriMap.put(cipher2.substring(i,i+3),1);
+    		}
+    		else{
+    			int count = TriMap.get(cipher2.substring(i,i+3));
+    			count++;
+    			TriMap.put(cipher2.substring(i,i+3),count);
+    		}
+    		
+    	}
+    	/*
+    	//Digraph map
+    	TreeMap<String, Integer> DiMap = new TreeMap<String, Integer>();
+        
+    	
+    	for(int i=0;i<(cipher2.length()-2);i++){
+    		
+    		if(DiMap.get(cipher2.substring(i,i+2)) == null){
+    			DiMap.put(cipher2.substring(i,i+2),1);
+    		}
+    		else{
+    			int count = DiMap.get(cipher2.substring(i,i+2));
+    			count++;
+    			DiMap.put(cipher2.substring(i,i+2),count);
+    		}
+    		
+    	}
+    	*/
+    	
+    	//Print out Sixgraph
+    	for (Map.Entry<String, Integer> entry : SixMap.entrySet()) {
+    	     System.out.println(entry.getKey() );
+    	}
+    	for (Map.Entry<String, Integer> entry : SixMap.entrySet()) {
+   	     System.out.println(entry.getValue());
+    	}
+    	
+    	System.out.print(SixMap + "\n\n");
+    	
+    	/*
+    	//Print out Pentagraph
+    	for (Map.Entry<String, Integer> entry : PentaMap.entrySet()) {
+    	     System.out.println(entry.getKey() );
+    	}
+    	for (Map.Entry<String, Integer> entry : PentaMap.entrySet()) {
+   	     System.out.println(entry.getValue());
+    	}
+    	
+    	System.out.print(PentaMap + "\n\n");
+    	*/
+    	/*
+    	//Print out Quadgraph
+    	for (Map.Entry<String, Integer> entry : QuadMap.entrySet()) {
+    	     System.out.println(entry.getKey() );
+    	}
+    	for (Map.Entry<String, Integer> entry : QuadMap.entrySet()) {
+   	     System.out.println(entry.getValue());
+    	}
+    	
+    	System.out.print(PentaMap + "\n\n");
+    	*/
+    	/*
+    	//Print out Trigraph
+    	for (Map.Entry<String, Integer> entry : TriMap.entrySet()) {
+    	     System.out.println(entry.getKey() );
+    	}
+    	for (Map.Entry<String, Integer> entry : TriMap.entrySet()) {
+   	     System.out.println(entry.getValue());
+    	}
+    	
+    	System.out.print(TriMap + "\n\n");
+    	*/
+    	/*
+    	//Print out digraph
+    	for (Map.Entry<String, Integer> entry : DiMap.entrySet()) {
+    	     System.out.println(entry.getKey() );
+    	}
+    	for (Map.Entry<String, Integer> entry : DiMap.entrySet()) {
+   	     System.out.println(entry.getValue());
+    	}
+    	
+    	System.out.print(DiMap + "\n\n");
+    	*/
+       	
+    	//Letter Mapping array
+    	letterArray[0][0] = "P";
+    	letterArray[0][1] = "L";
+    	letterArray[0][2] = "A";
+    	letterArray[0][3] = "Y";
+    	letterArray[0][4] = "F";
+    	
+    	letterArray[1][0] = "I";
+    	letterArray[1][1] = "R";
+    	letterArray[1][2] = "E";
+    	letterArray[1][3] = "X";
+    	letterArray[1][4] = "M";
+    	
+    	letterArray[2][0] = "B";
+    	letterArray[2][1] = "C";
+    	letterArray[2][2] = "D";
+    	letterArray[2][3] = "G";
+    	letterArray[2][4] = "H";
+  
+    	letterArray[3][0] = "K";
+    	letterArray[3][1] = "N";
+    	letterArray[3][2] = "O";
+    	letterArray[3][3] = "Q";
+    	letterArray[3][4] = "S";
+  
+    	letterArray[4][0] = "T";
+    	letterArray[4][1] = "U";
+    	letterArray[4][2] = "V";
+    	letterArray[4][3] = "W";
+    	letterArray[4][4] = "Z";
+    	
+    	//Testing for printing out key array
+    	for (int i=0;i<5;i++){
+    		for (int j=0;j<5;j++){
+        		System.out.print(letterArray[i][j] + " ");
+        	}
+    		System.out.print("\n");
+    	}	
+    }
+    
     public static int[] searchArray(String desiredString){
     	int[] results = new int[2];
     	for (int i=0;i<5;i++){
@@ -338,8 +555,7 @@ public class A2 {
                
 	}
 	
-	//public static double quadgramScore(){}
-		
+	
 	
 	public static String decrypter(String text) {
 		//Decrypter
